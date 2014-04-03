@@ -1,0 +1,188 @@
+.markdown-content {
+
+	*, *:before, *:after {
+		font-size: 14px;
+		font-family: monospace;
+		line-height: 1.1;
+		margin: 0;
+		padding: 0;
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 1em;
+		margin-bottom: 2ch;
+	}
+	h1:before {
+		content:'# ';
+	}
+	h2:before {
+		content:'## ';
+	}
+	h3:before {
+		content:'### ';
+	}
+	h4:before {
+		content:'#### ';
+	}
+	h5:before {
+		content:'##### ';
+	}
+	h6:before {
+		content:'###### ';
+	}
+	pre, blockquote {
+		margin: 1em 1em 1em 1em;
+		margin: 2ch 2ch 2ch 2ch;
+		clear: both;
+	}
+
+	pre {
+		code {
+			&:before, &:after {
+				content: '```';
+				display: block;
+			}
+		}
+	}
+
+	p {
+		margin: 0 0 1em 0;
+		margin: 0 0 2ch 0;
+		code {
+			&:before, &:after {
+				content:'`';
+			}
+		}
+	}
+
+	blockquote {
+		position: relative;
+		padding-left: 1em;
+		padding-left: 2ch;
+		overflow: hidden;
+
+		&:after {
+			content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
+			white-space: pre;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	li {
+		list-style-type: none;
+		list-style-position: inside;
+		padding-left: 3ch;
+	}
+
+	ul, ol {
+		margin: 0 0 1em 0;
+		margin: 0 0 2ch 0;
+		ul, ol {
+			margin: 0 0 0 2ch;
+		}
+	}
+
+	ul > li:before {
+		content:'- ';
+		float: left;
+		margin: 0 0.5em 0 0;
+		margin: 0 0 0 -3ch;
+	}
+
+	ol > li:before {
+		content:'1. ';
+		float: left;
+		margin: 0 0.5em 0 0;
+		margin: 0 0 0 -3ch;
+	}
+
+	em {
+		font-weight: normal;
+		font-style: normal;
+		&:before, &:after {
+			content:'*';
+		}
+	}
+
+	del {
+		font-weight: normal;
+		font-style: normal;
+		text-decoration: none;
+		&:before, &:after {
+			content: '~~';
+		}
+	}
+
+	strong {
+		font-weight: normal;
+		font-style: normal;
+		&:before, &:after {
+			content:'__';
+		}
+	}
+
+	a {
+		&:before {
+			content: '[';
+		}
+		&:after {
+			content: "](" attr(href)")";
+		}
+		&:link, &:visited, &:hover, &:active, &:focus {
+			color: #000;
+			text-decoration: none;
+		}
+	}
+
+	hr {
+		display: block;
+		margin: 0 0 1em 0;
+		margin: 0 0 2ch 0;
+		display: block;
+		border: 0;
+		background-color: transparent;
+		&:after {
+			content: '----';
+		}
+	}
+
+	th, td {
+		&:before {
+			content: '|';
+		}
+		&:last-child:after {
+			content: '|';
+		}
+	}
+
+	img {
+		height:0;
+		width:0;
+		font-size:0;
+		color:transparent;
+		position:relative;
+		content: "";
+		&:before, &:after {
+			position:absolute;
+			top:0;
+			left:0;
+		}
+		&:before {
+			content: '!['attr(alt)']('attr(src) ' "'attr(title)'")';
+		}
+	}
+
+	table {
+		margin: 0 0 1em 0;
+		margin: 0 0 2ch 0;
+		text-align: left;
+	}
+
+	th[style], td[style] {
+		text-align: left !important;
+	}
+}
